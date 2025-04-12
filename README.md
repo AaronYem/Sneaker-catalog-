@@ -13,7 +13,7 @@ So this site isn’t just code. It’s a reminder of how far I’ve come and whe
 
 At first, I honestly didn’t know how to use arrays of objects like this.
 
-I watched a couple YouTube videos (thank you **Bro Code 🙏**) just to understand how to organize data in JavaScript. Once I realized each sneaker could be its own object with key-value pairs, it finally clicked.
+I watched a couple YouTube videos (thank you [**Bro Code**](https://www.youtube.com/@BroCodez)) just to understand how to organize data in JavaScript. Once I realized each sneaker could be its own object with key-value pairs, it finally clicked.
 
 I chose sneakers because I genuinely love them. Each pair has a story, and this catalog is my way of sharing a piece of that. Instead of copying a boring product list, I built something that actually means something to me — and I genuinely had fun with it.
 
