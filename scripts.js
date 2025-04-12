@@ -49,7 +49,7 @@ const sneakers = [
     color: "Chestnut",
     releaseYear: 2024,
     type: "Casual",
-    image: "images/uggslippers.jpg"
+    image: "images/IMG_2458.jpeg"
   },
   {
     name: "Yeezy Slides 'Onyx'",
@@ -100,16 +100,16 @@ const sneakers = [
     color: "Black/Patent Leather",
     releaseYear: 2022,
     type: "Streetwear",
-    image: "images/bapesta.jpg"
+    image: "images/IMG_2450.jpeg"
   },
   {
     name: "Union x Air Jordan 4 'Off Noir'",
-    brand: "Jordan x Union",
+    brand: "Jordan",
     price: 250,
     color: "Off Noir/Brigade Blue/Red",
     releaseYear: 2020,
     type: "Collab",
-    image: "images/union4.jpg"
+    image: "images/IMG_2440.jpeg"
   },
   {
     name: "Wales Bonner x Adidas Samba 'Desert White'",
