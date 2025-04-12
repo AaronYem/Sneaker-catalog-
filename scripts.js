@@ -12,7 +12,7 @@ const sneakers = [
     color: "White/Green",
     releaseYear: 2021,
     type: "Lifestyle",
-    image: "images/michiganstate.jpg"
+    image: "images/IMG_2333.jpeg"
   },
   
   {
