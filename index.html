@@ -1,11 +1,16 @@
 
- <!-- Writing comments on here is EXTREMELY TEDIOUS
-  
- why cant it just be */  😔  /* 
- 
- -->
- <link rel="stylesheet" href="style.css" />
- <link rel="stylesheet" href="style.css" />
+
+
+// I had no clue how to combine filtering + sorting + searching all in one function.
+// These videos helped a TON:
+// Filtering & sorting: https://www.youtube.com/watch?v=5ba0gQ5wCzY
+// Sorting arrays of objects: https://www.youtube.com/watch?v=7zuGmKfUt7s (Bro Code)
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,53 +18,50 @@
 
   <meta name="description" content="A catalog of sneakers I personally own" />
 
-  <!-- Link to the CSS file where I styled the site -->
+  <!-- Link to my CSS file — this is where I styled everything -->
+
   <link rel="stylesheet" href="style.css" />
 
-  <!-- This connects the JavaScript I wrote. 'defer' makes sure it loads after the page is ready -->
+  <!-- Connects the JavaScript file. 'defer' makes sure it loads after the page finishes -->
   <script type="text/javascript" src="scripts.js" defer></script>
-
 </head>
 
 <body>
-  <!-- Main heading of the page -->
 
+  <!-- Big heading at the top -->
   <header class="main-header">
     <h1 class="title">My Sneaker Collection</h1>
-
   </header>
 
-  <!-- Dropdown menu to filter sneakers by brand -->
-  <!-- I added this so users can easily view specific brands -->
+  <!-- Dropdown to filter by brand -->
+  <!-- I added this so you can quickly jump to Nike, Jordan, etc. -->
   <select id="brandFilter">
     <option value="all">All Brands</option>
     <option value="Nike">Nike</option>
-
-
     <option value="Jordan">Jordan</option>
     <option value="Jordan x Union">Jordan x Union</option>
-
     <option value="BAPE">BAPE</option>
     <option value="Adidas x Wales Bonner">Adidas x Wales Bonner</option>
   </select>
 
-  <!-- Sort sneakers by price -->
-  <!-- I didn’t know how to sort at first — learned this using MDN and a YouTube video -->
+  <!-- Dropdown to sort sneakers by price -->
+  <!-- This part was tricky at first — had to learn how sorting works in JavaScript -->
   <select id="sortPrice">
     <option value="default">Sort by Price</option>
     <option value="lowToHigh">Price: Low to High</option>
     <option value="highToLow">Price: High to Low</option>
-
   </select>
 
-  <!-- This input lets you search sneakers by name or brand -->
-  <!-- I had to look up how to make live search work — it's cool seeing it filter in real time -->
+  <!-- Search bar to filter sneakers by name or brand -->
+  <!-- I was hype when I got this working live — typing filters results instantly -->
   <input type="text" id="searchInput" placeholder="Search sneakers by name or brand..." />
 
-  <!-- This is where the sneakers will be displayed -->
-  <!-- The JavaScript creates cards and adds them in here -->
-
-  
+  <!-- This is where the sneaker cards get rendered -->
+  <!-- JavaScript handles this part — loops through my array and creates cards inside here -->
   <div id="catalog"></div>
+
 </body>
 </html>
+
+<!-- Writing comments on here is WAY more annoying than in JavaScript.
+     Why can’t we just do // like normal 😔 -->
