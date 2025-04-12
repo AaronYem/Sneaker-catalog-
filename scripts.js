@@ -3,17 +3,25 @@
 // I watched a couple YouTube videos ( Thank you Bro code 🙏 ) to understand how to structure data in JavaScript.
 // Once I realized each sneaker could be its own object with properties, it clicked. 
 
-
 const sneakers = [
   {
-    name: "Nike Dunk Low 'Michigan State'",
-    brand: "Nike",
-    price: 110,
-    color: "White/Green",
-    releaseYear: 2021,
-    type: "Lifestyle",
-    image: "images/IMG_2333.jpeg"
+    name: "Nike Dunk Low 'Michigan State'", // Name of my sneaker
+    brand: "Nike",                         // Shoe brand
+    price: 110,                            // Retail price (not always what i actually paid ;)
+    color: "White/Green",                  // Colorway
+    releaseYear: 2021,                     // Year of release
+    type: "Lifestyle",                     // Type of sneaker
+    image: "images/IMG_2333.jpeg"          // Path to sneaker image
   },
+
+
+// to connect the image to the item i created a folder named images uploaded all the pictures into that specific folder and then copied its jpeg name into its matching sneaker profile 
+
+
+
+// Every single shoe below follows has the same variables! 
+
+
   
   {
     name: "Wales Bonner x Adidas Samba 'Cream Green'",
@@ -135,13 +143,26 @@ const sneakers = [
 
 
 
-//This is my function that shows the sneakers on my page 
 
 // This part was confusing at first, especially working with the DOM.
 
-// The name Javascript is so misleading NOTHING like Java
+// I had to learn how to create and append elements by watching tutorials and experimenting in the browser console. 
 
-// I learned how to create and append elements by watching tutorials and experimenting in the browser console. Which is something i know you guys reccomended we do
+// thanks for the tip to use the browser console!!!!!
+
+
+
+
+
+// This function below shows sneaker cards on the page.
+// It takes in an array of sneaker objects and then loops through each one,
+// building a little "card" with the sneaker's image, name, brand, color, etc.
+// Before it starts, it clears out whatever was on the page before
+// just so you don’t end up stacking duplicate entries.
+// and im using this function whenever i need to show filtered, searched, or all sneakers
+
+
+
 function displaySneakers(sneakerArray) {
   const catalog = document.getElementById("catalog");
   catalog.innerHTML = ""; // the ""  Clears the last piece of content so we can render the list again
@@ -169,13 +190,14 @@ function displaySneakers(sneakerArray) {
 
 
   //  This is just grabbing all my filter/sort/search inputs
+
   const searchInput = document.getElementById("searchInput");
   const brandFilter = document.getElementById("brandFilter");
   const sortPrice = document.getElementById("sortPrice");
 
 
 
-  // 🔁 Function to apply all filters
+  //  Function to apply all filters
   // This took me the longest, specificly getting all three (search, filter, and sort) to work together.
   //this tutorial really helped me understand `.filter()` and `.sort()`:
   //https://www.youtube.com/watch?v=5ba0gQ5wCzY
@@ -195,20 +217,25 @@ function displaySneakers(sneakerArray) {
       return matchesSearch && matchesBrand;
     });
 
-    // Sorting results based on selected price direction
+    // Here results are sorted based on the selected price direction
+    
+// If it's "low to high", it sorts sneakers from cheapest to most expensive
     if (sortPrice.value === "lowToHigh") {
       filtered.sort((a, b) => a.price - b.price);
     } else if (sortPrice.value === "highToLow") {
       filtered.sort((a, b) => b.price - a.price);
+
+// If it's "high to low", it does the opposite
+
     }
 
     displaySneakers(filtered); // and then re-displaying the filtered and sorted list
   }
 
-  // Add event listeners so filters update live
-  searchInput.addEventListener("input", applyFilters);
-  brandFilter.addEventListener("change", applyFilters);
-  sortPrice.addEventListener("change", applyFilters);
+  // Where we are adding event listeners so filters update in real time
+searchInput.addEventListener("input", applyFilters);     // Runs when the user types in the search box
+brandFilter.addEventListener("change", applyFilters);    // Runs when a brand is selected
+sortPrice.addEventListener("change", applyFilters);      // Runs when one of the sort optiona are changed
 }
 
 
