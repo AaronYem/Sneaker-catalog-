@@ -1,4 +1,9 @@
-// Sneaker catalog data
+//  My entire sneaker collection
+// At first, I honestly didn’t know how to use arrays of objects like this.
+// I watched a couple YouTube videos ( Thank you Bro code 🙏 ) to understand how to structure data in JavaScript.
+// Once I realized each sneaker could be its own object with properties, it clicked. 
+
+
 const sneakers = [
   {
     name: "Nike Dunk Low 'Michigan State'",
@@ -56,19 +61,31 @@ const sneakers = [
   }
 ];
 
-// Function to display sneakers on the page
+
+
+//This is my function that shows the sneakers on my page 
+
+// This part was confusing at first, especially working with the DOM.
+
+// The name Javascript is so misleading NOTHING like Java
+
+// I learned how to create and append elements by watching tutorials and experimenting in the browser console. Which is something i know you guys reccomended we do
 function displaySneakers(sneakerArray) {
   const catalog = document.getElementById("catalog");
-  catalog.innerHTML = ""; // Clear any previous content
+  catalog.innerHTML = ""; // the ""  Clears the last piece of content so we can render the list again
+
 
   sneakerArray.forEach((sneaker) => {
     const card = document.createElement("div");
     card.className = "card";
 
+    // Dynamically building each sneaker card
     card.innerHTML = `
       <img src="${sneaker.image}" alt="${sneaker.name}" />
       <h3>${sneaker.name}</h3>
       <p><strong>Brand:</strong> ${sneaker.brand}</p>
+
+
       <p><strong>Type:</strong> ${sneaker.type}</p>
       <p><strong>Color:</strong> ${sneaker.color}</p>
       <p><strong>Year:</strong> ${sneaker.releaseYear}</p>
@@ -79,43 +96,55 @@ function displaySneakers(sneakerArray) {
   });
 
 
-
+  //  This is just grabbing all my filter/sort/search inputs
   const searchInput = document.getElementById("searchInput");
   const brandFilter = document.getElementById("brandFilter");
   const sortPrice = document.getElementById("sortPrice");
 
-  
-  function applyFilters() {
-    // Sort by price
-if (sortPrice.value === "lowToHigh") {
-  filtered.sort((a, b) => a.price - b.price);
-} else if (sortPrice.value === "highToLow") {
-  filtered.sort((a, b) => b.price - a.price);
-}
 
+
+  // 🔁 Function to apply all filters
+  // This took me the longest, specificly getting all three (search, filter, and sort) to work together.
+  //this tutorial really helped me understand `.filter()` and `.sort()`:
+  //https://www.youtube.com/watch?v=5ba0gQ5wCzY
+
+  function applyFilters() {
     const query = searchInput.value.toLowerCase();
     const selectedBrand = brandFilter.value;
-  
-    const filtered = sneakers.filter((sneaker) => {
+
+    let filtered = sneakers.filter((sneaker) => {
       const matchesSearch =
         sneaker.name.toLowerCase().includes(query) ||
         sneaker.brand.toLowerCase().includes(query);
-  
+
       const matchesBrand =
         selectedBrand === "all" || sneaker.brand === selectedBrand;
-  
+
       return matchesSearch && matchesBrand;
     });
-  
-    displaySneakers(filtered);
+
+    // Sorting results based on selected price direction
+    if (sortPrice.value === "lowToHigh") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortPrice.value === "highToLow") {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+
+    displaySneakers(filtered); // and then re-displaying the filtered and sorted list
   }
-  
+
+  // Add event listeners so filters update live
   searchInput.addEventListener("input", applyFilters);
-brandFilter.addEventListener("change", applyFilters);
-sortPrice.addEventListener("change", applyFilters);
-
-
-
-
+  brandFilter.addEventListener("change", applyFilters);
+  sortPrice.addEventListener("change", applyFilters);
 }
+
+
+
+// Show all sneakers when page loads
+document.addEventListener("DOMContentLoaded", () => {
+  displaySneakers(sneakers);
+});
+
+displaySneakers(sneakers);
 

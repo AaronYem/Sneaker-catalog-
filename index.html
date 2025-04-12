@@ -1,48 +1,65 @@
+
+ <!-- Writing comments on here is EXTREMELY TEDIOUS
+  
+ why cant it just be */  😔  /* 
+ 
+ -->
+ <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="style.css" />
 <!DOCTYPE html>
 <html>
 <head>
   <title>My Sneaker Catalog</title>
+
   <meta name="description" content="A catalog of sneakers I personally own" />
+
+  <!-- Link to the CSS file where I styled the site -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- This connects the JavaScript I wrote. 'defer' makes sure it loads after the page is ready -->
   <script type="text/javascript" src="scripts.js" defer></script>
+
 </head>
+
 <body>
+  <!-- Main heading of the page -->
 
   <header class="main-header">
     <h1 class="title">My Sneaker Collection</h1>
+
   </header>
 
-
-
-
-
-
+  <!-- Dropdown menu to filter sneakers by brand -->
+  <!-- I added this so users can easily view specific brands -->
   <select id="brandFilter">
     <option value="all">All Brands</option>
     <option value="Nike">Nike</option>
+
+
     <option value="Jordan">Jordan</option>
     <option value="Jordan x Union">Jordan x Union</option>
+
     <option value="BAPE">BAPE</option>
     <option value="Adidas x Wales Bonner">Adidas x Wales Bonner</option>
   </select>
 
-
-
-
+  <!-- Sort sneakers by price -->
+  <!-- I didn’t know how to sort at first — learned this using MDN and a YouTube video -->
   <select id="sortPrice">
     <option value="default">Sort by Price</option>
     <option value="lowToHigh">Price: Low to High</option>
     <option value="highToLow">Price: High to Low</option>
+
   </select>
+
+  <!-- This input lets you search sneakers by name or brand -->
+  <!-- I had to look up how to make live search work — it's cool seeing it filter in real time -->
+  <input type="text" id="searchInput" placeholder="Search sneakers by name or brand..." />
+
+  <!-- This is where the sneakers will be displayed -->
+  <!-- The JavaScript creates cards and adds them in here -->
+
   
-
-
-  <!-- Sneaker Catalog Search -->
-<input type="text" id="searchInput" placeholder="Search sneakers by name or brand..." />
-
-<!-- Sneaker Catalog Container -->
-<div id="catalog"></div>
-
-
+  <div id="catalog"></div>
 </body>
 </html>
