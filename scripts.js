@@ -14,6 +14,67 @@ const sneakers = [
     type: "Lifestyle",
     image: "images/michiganstate.jpg"
   },
+  
+  {
+    name: "Wales Bonner x Adidas Samba 'Cream Green'",
+    brand: "Adidas x Wales Bonner",
+    price: 180,
+    color: "Cream/Green",
+    releaseYear: 2023,
+    type: "Fashion",
+    image: "images/creamgreen.jpg"
+  },
+  {
+    name: "Wales Bonner x Adidas Samba 'Wonder Clay Royal'",
+    brand: "Adidas x Wales Bonner",
+    price: 180,
+    color: "Clay/Grey/Royal Blue",
+    releaseYear: 2023,
+    type: "Fashion",
+    image: "images/clayroyal.jpg"
+  },
+  {
+    name: "Adidas Samba OG Low-Top Sneakers",
+    brand: "Adidas",
+    price: 100,
+    color: "Grey/White",
+    releaseYear: 2022,
+    type: "Lifestyle",
+    image: "images/sambaog.jpg"
+  },
+  {
+    name: "UGG Talisman Slippers",
+    brand: "UGG",
+    price: 130,
+    color: "Chestnut",
+    releaseYear: 2024,
+    type: "Casual",
+    image: "images/uggslippers.jpg"
+  },
+  {
+    name: "Yeezy Slides 'Onyx'",
+    brand: "Yeezy",
+    price: 70,
+    color: "Black",
+    releaseYear: 2022,
+    type: "Slide",
+    image: "images/yeezyonyx.jpg"
+  },
+  {
+    name: "Nike Vomero 5 'Metallic Silver'",
+    brand: "Nike",
+    price: 160,
+    color: "Metallic Silver",
+    releaseYear: 2023,
+    type: "Running",
+    image: "images/vomero.jpg"
+  },
+  
+
+
+
+
+
   {
     name: "Air Jordan 1 Retro High OG 'Mocha'",
     brand: "Jordan",
