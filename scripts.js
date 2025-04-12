@@ -51,6 +51,17 @@ const sneakers = [
     type: "Casual",
     image: "images/IMG_2458.jpeg"
   },
+
+  {
+    name: "Nike Air Max 1 'Denim Red Swoosh'",
+    brand: "Nike",
+    price: 160,
+    color: "Light Blue Denim/Red/White",
+    releaseYear: 2024,
+    type: "Lifestyle",
+    image: "images/IMG_2403.jpeg"
+  },
+
   {
     name: "Yeezy Slides 'Onyx'",
     brand: "Yeezy",
