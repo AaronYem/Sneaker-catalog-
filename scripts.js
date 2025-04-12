@@ -22,7 +22,7 @@ const sneakers = [
     color: "Cream/Green",
     releaseYear: 2023,
     type: "Fashion",
-    image: "images/creamgreen.jpg"
+    image: "images/IMG_2352.jpeg"
   },
   {
     name: "Wales Bonner x Adidas Samba 'Wonder Clay Royal'",
@@ -31,7 +31,7 @@ const sneakers = [
     color: "Clay/Grey/Royal Blue",
     releaseYear: 2023,
     type: "Fashion",
-    image: "images/clayroyal.jpg"
+    image: "images/IMG_2421.jpeg"
   },
   {
     name: "Adidas Samba OG Low-Top Sneakers",
@@ -40,7 +40,7 @@ const sneakers = [
     color: "Grey/White",
     releaseYear: 2022,
     type: "Lifestyle",
-    image: "images/sambaog.jpg"
+    image: "images/IMG_2428.jpeg"
   },
   {
     name: "UGG Talisman Slippers",
@@ -58,7 +58,7 @@ const sneakers = [
     color: "Black",
     releaseYear: 2022,
     type: "Slide",
-    image: "images/yeezyonyx.jpg"
+    image: "images/IMG_2379.jpeg"
   },
   {
     name: "Nike Vomero 5 'Metallic Silver'",
@@ -67,7 +67,7 @@ const sneakers = [
     color: "Metallic Silver",
     releaseYear: 2023,
     type: "Running",
-    image: "images/vomero.jpg"
+    image: "images/IMG_2411.jpeg"
   },
   
 
@@ -82,7 +82,7 @@ const sneakers = [
     color: "Sail/Dark Mocha/Black",
     releaseYear: 2020,
     type: "Basketball",
-    image: "images/mocha.jpg"
+    image: "images/IMG_2360.jpeg"
   },
   {
     name: "Air Jordan 4 'Taupe Haze'",
@@ -91,7 +91,7 @@ const sneakers = [
     color: "Taupe/Infrared/Black",
     releaseYear: 2021,
     type: "Basketball",
-    image: "images/taupehaze.jpg"
+    image: "images/IMG_2370.jpeg"
   },
   {
     name: "A Bathing Ape Bapesta 'Black Patent'",
@@ -118,7 +118,7 @@ const sneakers = [
     color: "Cream/White",
     releaseYear: 2023,
     type: "Fashion",
-    image: "images/walesbonner.jpg"
+    image: "images/IMG_2341.jpeg"
   }
 ];
 
