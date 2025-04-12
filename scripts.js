@@ -1,97 +1,121 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
-
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
-
-// This function adds cards the page to display the data in the array
-function showCards() {
-  const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
-  const templateCard = document.querySelector(".card");
-
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
-
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
+// Sneaker catalog data
+const sneakers = [
+  {
+    name: "Nike Dunk Low 'Michigan State'",
+    brand: "Nike",
+    price: 110,
+    color: "White/Green",
+    releaseYear: 2021,
+    type: "Lifestyle",
+    image: "images/michiganstate.jpg"
+  },
+  {
+    name: "Air Jordan 1 Retro High OG 'Mocha'",
+    brand: "Jordan",
+    price: 180,
+    color: "Sail/Dark Mocha/Black",
+    releaseYear: 2020,
+    type: "Basketball",
+    image: "images/mocha.jpg"
+  },
+  {
+    name: "Air Jordan 4 'Taupe Haze'",
+    brand: "Jordan",
+    price: 200,
+    color: "Taupe/Infrared/Black",
+    releaseYear: 2021,
+    type: "Basketball",
+    image: "images/taupehaze.jpg"
+  },
+  {
+    name: "A Bathing Ape Bapesta 'Black Patent'",
+    brand: "BAPE",
+    price: 300,
+    color: "Black/Patent Leather",
+    releaseYear: 2022,
+    type: "Streetwear",
+    image: "images/bapesta.jpg"
+  },
+  {
+    name: "Union x Air Jordan 4 'Off Noir'",
+    brand: "Jordan x Union",
+    price: 250,
+    color: "Off Noir/Brigade Blue/Red",
+    releaseYear: 2020,
+    type: "Collab",
+    image: "images/union4.jpg"
+  },
+  {
+    name: "Wales Bonner x Adidas Samba 'Desert White'",
+    brand: "Adidas x Wales Bonner",
+    price: 180,
+    color: "Cream/White",
+    releaseYear: 2023,
+    type: "Fashion",
+    image: "images/walesbonner.jpg"
   }
+];
+
+// Function to display sneakers on the page
+function displaySneakers(sneakerArray) {
+  const catalog = document.getElementById("catalog");
+  catalog.innerHTML = ""; // Clear any previous content
+
+  sneakerArray.forEach((sneaker) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${sneaker.image}" alt="${sneaker.name}" />
+      <h3>${sneaker.name}</h3>
+      <p><strong>Brand:</strong> ${sneaker.brand}</p>
+      <p><strong>Type:</strong> ${sneaker.type}</p>
+      <p><strong>Color:</strong> ${sneaker.color}</p>
+      <p><strong>Year:</strong> ${sneaker.releaseYear}</p>
+      <p><strong>Price:</strong> $${sneaker.price}</p>
+    `;
+
+    catalog.appendChild(card);
+  });
+
+
+
+  const searchInput = document.getElementById("searchInput");
+  const brandFilter = document.getElementById("brandFilter");
+  const sortPrice = document.getElementById("sortPrice");
+
+  
+  function applyFilters() {
+    // Sort by price
+if (sortPrice.value === "lowToHigh") {
+  filtered.sort((a, b) => a.price - b.price);
+} else if (sortPrice.value === "highToLow") {
+  filtered.sort((a, b) => b.price - a.price);
 }
 
-function editCardContent(card, newTitle, newImageURL) {
-  card.style.display = "block";
+    const query = searchInput.value.toLowerCase();
+    const selectedBrand = brandFilter.value;
+  
+    const filtered = sneakers.filter((sneaker) => {
+      const matchesSearch =
+        sneaker.name.toLowerCase().includes(query) ||
+        sneaker.brand.toLowerCase().includes(query);
+  
+      const matchesBrand =
+        selectedBrand === "all" || sneaker.brand === selectedBrand;
+  
+      return matchesSearch && matchesBrand;
+    });
+  
+    displaySneakers(filtered);
+  }
+  
+  searchInput.addEventListener("input", applyFilters);
+brandFilter.addEventListener("change", applyFilters);
+sortPrice.addEventListener("change", applyFilters);
 
-  const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
 
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+
 }
 
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
-  );
-}
-
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
-}
