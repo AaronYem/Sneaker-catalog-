@@ -104,7 +104,7 @@ const sneakers = [
   },
   {
     name: "Union x Air Jordan 4 'Off Noir'",
-    brand: "Jordan",
+    brand: "Jordan x Union ",
     price: 250,
     color: "Off Noir/Brigade Blue/Red",
     releaseYear: 2020,
