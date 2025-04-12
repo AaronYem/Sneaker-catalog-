@@ -1,132 +1,51 @@
-# SEA Stage 2 - Data Catalog Project
+# 👟 My Sneaker Closet
+This project is part of Snap Engineering Academy Stage 2. The goal was to build a simple catalog-style website using only HTML, CSS, and JavaScript — no frameworks, no shortcuts.
 
-This repository contains the instructions, requirements, and starter code for Stage Two of the Snap Engineering Academy application process.
+I decided to make something that’s personal to me: a catalog of sneakers from my own collection.
 
----
+I’ve always had a huge passion for shoes. Growing up, I wanted sneakers I couldn’t always get — money was tight, and my parents did their best. Now that I’m older and working part-time, every pair I buy feels like a little win. I know the younger me would be smiling.
 
-## 📚 Table of Contents
-
-- [Your Task](#your-task)
-- [Requirements](#requirements---your-catalog-website-should)
-- [Getting Started](#getting-started)
-- [Submitting](#submitting)
-- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
+So this site isn’t just code. It’s a reminder of how far I’ve come and where I’m heading.
 
 ---
 
-## 🎯 Your Task
+## 📸 About the Project
 
-### <p align="center">Create a "catalog" website for something you're passionate about.</p>
+At first, I honestly didn’t know how to use arrays of objects like this.
 
-> 📝 **Note:**  
-> If you have not used GitHub or programmed a website with JavaScript before, that's OK! Part of the challenge is figuring out things you're not familiar with.
+I watched a couple YouTube videos (thank you **Bro Code 🙏**) just to understand how to organize data in JavaScript. Once I realized each sneaker could be its own object with key-value pairs, it finally clicked.
 
----
-
-## ✅ Requirements - Your Catalog Website Should...
-
-- Show off your understanding of basic data structures: **arrays** and **objects**.
-- Display a **substantial amount of interesting data** in a "catalog". You can look online for datasets or create your own.  
-  Your data should be easy to find in your source code—either in variables at the top of `scripts.js` or imported from a file.
-- Include **two or more features** that operate on your data and modify how it's displayed. Examples:
-  - Filtering
-  - Searching
-  - Sorting
-  - Updating
-  - Adding/removing entries  
-    Think about what users might want to do while using your site!
-- Look polished ✨. Use **HTML** and **CSS** to make your data easy to read and visually appealing.
-- Be built from this **starter code**—you can change anything you want, but build on top of it.
-- Be an **original** project. Please do not submit something previously created for a class, internship, or client.  
-  You are encouraged to use online resources, but **make sure you understand every line of code** in your project.
+I chose sneakers because I genuinely love them. Each pair has a story, and this catalog is my way of sharing a piece of that. Instead of copying a boring product list, I built something that actually means something to me — and I genuinely had fun with it.
 
 ---
 
-## 🛠️ Getting Started
+## 💡 Features
 
-1. **Create a GitHub account** if you haven't already.
-2. Click the green **"Use as Template"** button in the upper right corner, then choose **"Create a new repository"**:  
-   a. Choose yourself as the owner  
-   b. Give your repository a name  
-   c. Click **"Create Repository"**
-3. Copy or download the files to your own computer.
-4. Open and edit the website using a text editor:
-   - Modify `index.html`, `style.css`, and `scripts.js`.
-   - To preview, open `index.html` in a web browser (double-click it).
-   - You should see something like this:
-
-<img height="300" alt="Screenshot of catalog example" src="https://github.com/Snap-Engineering-Academy-2023/rn_lab1/assets/7607483/fdd57236-50fe-48ca-956d-d9b4b12db038">
+- ✅ Displays my sneaker collection with images, name, brand, type, color, year, and price
+- 🔍 Search bar 
+- 📦 Brand filter dropdown (e.g., Nike, Jordan, BAPE)
+- 💸 Sort sneakers by price (low-to-high or high-to-low)
+- 💻 Written entirely in vanilla JS, HTML, and CSS — no frameworks
 
 ---
 
-## 🚀 Submitting
+## 🧠 What I Learned
 
-1. **Publish your website to the internet!**  
-   We recommend using [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
-2. **Test the published version.**  
-   Make sure everything works properly before submitting.
-3. **Update your GitHub repository** so it reflects the latest version of your project.
-4. **Submit** both:
-   - The **URL** to your published website
-   - The **link** to your GitHub repository  
-     …via the Google Form linked in your email.
+- How to build and loop through **arrays of objects**
+- How to dynamically generate HTML with JavaScript
+- How to use `.filter()` and `.sort()` together
+- How to target elements in the DOM and listen for user input
+- That **`innerHTML = ""`** is key for re-rendering data 😅
+- That **JavaScript ≠ Java** in *any* way 😭
+- That debugging broken images can seriously test your patience...
 
 ---
 
-## ❓ Frequently Asked Questions (FAQ)
+## 🔨 Project Structure
 
-### ❄️ Is it OK that my catalog resets when I refresh the page?
-
-**Yes!** That's exactly what the starter code does too. You don't need to worry about preserving data after a page refresh.
-
----
-
-### 💻 Can I copy bits of code from online resources?
-
-**Yes, absolutely!** You should search for and use **small chunks** of code.  
-For example:
-
-- ✅ Copying code to create a dropdown menu is fine.
-- ❌ Copying a full “filter data by date” feature is not.
-
-Be thoughtful about what you borrow!
-
----
-
-### 🤖 Can I use generative AI (like ChatGPT or Copilot)?
-
-**Partially.**
-
-- ✅ You _may_ use AI tools to help write **HTML** and **CSS**.
-- ❌ You _may not_ use AI to write **JavaScript**.
-
-HTML/CSS can be tricky to get right, and it's okay to get help making things look nice.  
-But JavaScript is where you show your own logic and understanding of data!
-
----
-
-### 🧰 Can I use a different template?
-
-**Nope!**  
-You must use the provided starter code, though you're free to customize it however you like.  
-You _can_ copy **small chunks** from other templates if needed.
-
----
-
-### 🛠️ Can I use a framework like React, Vue, Bootstrap, or Tailwind?
-
-**Nope!**  
-This project is for folks new to web dev. Frameworks do a lot of heavy lifting and hide the logic we're asking you to demonstrate.  
-SEA will teach you frameworks later—stick to **vanilla HTML, CSS, and JS** for now.
-
----
-
-### 🌐 Can I use APIs?
-
-**Nope!**  
-APIs can add complexity beyond the scope of this challenge.  
-If you really want to use data from an API, **save it to a file** (like `.json` or `.csv`) and use that instead.
-
----
-
-> 💬 **Have any questions?** Drop them on the [Padlet here](https://padlet.com/arlenschallenge/2025-snap-engineering-academy-stage-2-project-assessment-que-ndmqkef3wxt8sh72) and we'll get back to you!
+```bash
+📁 Sneaker-Catalog
+├── index.html        # The main structure of the site
+├── style.css         # Styling for layout and design
+├── scripts.js        # JavaScript code (display + filtering)
+└── images/           # All sneaker images stored locally
